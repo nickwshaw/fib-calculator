@@ -14,4 +14,10 @@ after_success:
   - docker build -t nickwshaw/multi-fib-nginx ./nginx
   - docker build -t nickwshaw/multi-fib-server ./server
   - docker build -t nickwshaw/multi-fib-worker ./worker
+  # Log into Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_PASSWORD" --password-stdin
   # Take images and push them to docker hub
+  - docker push nickwshaw/multi-fib-client
+  - docker push nickwshaw/multi-fib-nginx
+  - docker push nickwshaw/multi-fib-server
+  - docker push nickwshaw/multi-fib-worker
