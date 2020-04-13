@@ -1,3 +1,4 @@
+version: ~> 1.0
 language: generic
 services:
   - docker
@@ -23,6 +24,3 @@ after_success:
 
   deploy:
     provider: elasticbeanstalk
-    region: us-east-2
-    app: fib-multi-docker
-    env: FibMultiDocker-env
