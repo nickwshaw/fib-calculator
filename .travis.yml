@@ -22,5 +22,14 @@ after_success:
   - docker push nickwshaw/multi-fib-server
   - docker push nickwshaw/multi-fib-worker
 
-  deploy:
-    provider: elasticbeanstalk
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: fib-multi-docker
+  env: FibMultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-2-107716788880
+  bucket_path: fib_multi_docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
