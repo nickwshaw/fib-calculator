@@ -27,7 +27,5 @@ after_success:
     app: fib-multi-docker
     env: FibMultiDocker-env
     bucket_name: elasticbeanstalk-us-east-2-107716788880
-    on:
-      branch: master
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
